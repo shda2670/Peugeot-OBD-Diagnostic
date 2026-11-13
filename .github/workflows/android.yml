@@ -21,6 +21,9 @@ jobs:
       - name: Find Gradle files
         run: |
           find . -name "build.gradle" -o -name "build.gradle.kts"
+      - name: Show app settings
+        run: cat app/build.gradle.kts
+        
       - uses: actions/setup-java@v4
         with:
           distribution: temurin
