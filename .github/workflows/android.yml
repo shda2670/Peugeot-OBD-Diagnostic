@@ -18,6 +18,9 @@ jobs:
         run: |
           unzip 405Doctor_source_v0.1.zip
           cp -a 405Doctor/. .
+      - name: Fix AlertDialog import
+        run: |
+          sed -i '/^package /a import android.app.AlertDialog' app/src/main/java/com/example/fivedoct/MainActivity.kt
       - name: Fix JVM target
         run: |
           cat > app/build.gradle.kts <<'EOF'
