@@ -18,7 +18,9 @@ jobs:
         run: |
           unzip 405Doctor_source_v0.1.zip
           cp -a 405Doctor/. .
-
+      - name: Find Gradle files
+        run: |
+          find . -name "build.gradle" -o -name "build.gradle.kts"
       - uses: actions/setup-java@v4
         with:
           distribution: temurin
